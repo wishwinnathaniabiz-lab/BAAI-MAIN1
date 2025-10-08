@@ -9,7 +9,7 @@ X = input('First number: ')
 Y = input('Second number: ')
 
 # 2. Process
-Sum = X + Y
+X1 
 
 # 3. Output
 print(f'Result {Sum}')
