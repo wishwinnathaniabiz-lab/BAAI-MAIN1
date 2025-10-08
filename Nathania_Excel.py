@@ -10,7 +10,12 @@ import pandas as pd
 df = pd.read_excel('Financial_Sample.xlsx')
 
 # 2. Process
-sum = df['Units Sold'].sum()
+Sum = df.sum(numeric_only=True)
+Sum[df.columns[0]] = 'Total'
+df_with_total = pd.concat([df, pd.DataFrame([Sum])], ignore_index=True)
 
 # 3. Output
-print(f'Sum {sum}')
+print(df_with_total)
+
+# 4. Save to Excel
+df_with_total.to_excel('Financial_Sample_with_total.xlsx', index=False)
