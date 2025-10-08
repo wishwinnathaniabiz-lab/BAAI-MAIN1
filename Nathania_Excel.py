@@ -10,6 +10,7 @@ import pandas as pd
 df = pd.read_excel('Financial_Sample.xlsx')
 
 # 2. Process
+sum = df['Units Sold'].sum()
 
 # 3. Output
-print(df)
+print(f'Sum {sum}')
