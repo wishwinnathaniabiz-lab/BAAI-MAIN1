@@ -10,12 +10,14 @@ import pandas as pd
 df = pd.read_excel('Financial_Sample.xlsx')
 
 # 2. Process
-Sum = df.sum(numeric_only=True)
-Sum[df.columns[0]] = 'Total'
-df_with_total = pd.concat([df, pd.DataFrame([Sum])], ignore_index=True)
+sums = df.select_dtypes(include='number').sum()
+
+# Optionally give a label for the row (e.g., 'Total')
+sums['Name'] = 'Total' # Add a value for the non-numeric column
+
+# Append the total row to the DataFrama
+df_with_total = pd.concat([df, pd.DataFrame([sums])], ignore_index=True)
 
 # 3. Output
 print(df_with_total)
-
-# 4. Save to Excel
 df_with_total.to_excel('result_with_total.xlsx', index=False)
