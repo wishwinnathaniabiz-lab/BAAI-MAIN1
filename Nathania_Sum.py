@@ -13,7 +13,7 @@ X1 = int(X)
 Y1 = int(Y)
 
 Sum = X + Y
-Sum1 = X1 + Y1
+Sum1 = X1 + Y1 
 
 # 3. Output
 print(f'Result {Sum}')
