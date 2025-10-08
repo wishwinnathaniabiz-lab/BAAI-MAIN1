@@ -18,4 +18,4 @@ df_with_total = pd.concat([df, pd.DataFrame([Sum])], ignore_index=True)
 print(df_with_total)
 
 # 4. Save to Excel
-df_with_total.to_excel('Financial_Sample_with_total.xlsx', index=False)
+df_with_total.to_excel('result_with_total.xlsx', index=False)
