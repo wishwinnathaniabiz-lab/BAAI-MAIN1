@@ -8,7 +8,11 @@
 #print numbers from 1 to 5
 
 # 2. Process
+print("Output:", end=" ")
 for i in range (1, 6):
-    print (f"count: {i}")
+    if i < 5:
+        print (f"count: {i}", ends=", ")
+    else:
+        print(f"count:{i}")
 
 # 3. Output

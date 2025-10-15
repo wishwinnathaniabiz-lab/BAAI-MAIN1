@@ -17,6 +17,7 @@ products = [
 ]
 
 # 2. Process
+# Initialize tracking variables
 total_original = 0
 total_discount_amount = 0
 total_final = 0
@@ -24,6 +25,7 @@ total_final = 0
 # 3. Output
 print("=== PRODUCT DISCOUNT CALCULATOR ===\n")
 
+# Loop through products
 for product in products:
     name = product["name"]
     price = product["price"]
@@ -52,10 +54,10 @@ for product in products:
     final_price = price - discount_amount
 
     print(f"Product: {name}")
-    print(f"Category: {category}")
-    print(f"Original Price: ${price:.2f}")
-    print(f"Discount: {discount_rate * 100:.0f}%")
-    print(f"Final Price: ${final_price:.2f}\n")
+    print(f"  Category: {category}")
+    print(f"  Original Price: ${price:.2f}")
+    print(f"  Discount: {discount_rate * 100:.0f}%")
+    print(f"  Final Price: ${final_price:.2f}\n")
 
     total_original += price
     total_discount_amount += discount_amount
