@@ -63,6 +63,7 @@ for product in products:
     total_discount_amount += discount_amount
     total_final += final_price
 
+# Print summary
 print("=== SUMMARY ===")
 print(f"Total Products: {len(products)}")
 print(f"Total Original Price: ${total_original:.2f}")
