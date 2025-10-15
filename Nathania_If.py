@@ -5,10 +5,10 @@
 #
 
 # 1. Input
-temperature = 30 
+#print numbers from 1 to 5
 
 # 2. Process
-if temperature > 25:
-    print("It's too hot outside. Study hard in the library")
+for i in range (1, 6):
+    print (f"count: {i}")
 
 # 3. Output
