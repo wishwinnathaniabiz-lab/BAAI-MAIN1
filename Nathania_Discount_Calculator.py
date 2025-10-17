@@ -5,6 +5,7 @@
 #
 
 # 1. Input
+# List of dictionaries
 products = [
     {"name": "Laptop", "price": 1200, "category": "Electronics"},
     {"name": "Shirt", "price": 45, "category": "Clothing"},
@@ -21,9 +22,7 @@ products = [
 total_original = 0
 total_discount_amount = 0
 total_final = 0
-
-# 3. Output
-print("=== PRODUCT DISCOUNT CALCULATOR ===\n")
+product_results = []
 
 # Loop through products
 for product in products:
@@ -53,15 +52,27 @@ for product in products:
     discount_amount = price * discount_rate
     final_price = price - discount_amount
 
-    print(f"Product: {name}")
-    print(f"  Category: {category}")
-    print(f"  Original Price: ${price:.2f}")
-    print(f"  Discount: {discount_rate * 100:.0f}%")
-    print(f"  Final Price: ${final_price:.2f}\n")
+    product_results.append({
+        "name": name,
+        "category": category,
+        "original_price": price,
+        "discount_rate": discount_rate,
+        "final_price": final_price
+    })
 
     total_original += price
     total_discount_amount += discount_amount
     total_final += final_price
+
+# 3. Output
+print("=== PRODUCT DISCOUNT CALCULATOR ===\n")
+
+for item in product_results:
+    print(f"Product: {item['name']}")
+    print(f"  Category: {item['category']}")
+    print(f"  Original Price: ${item['original_price']:.2f}")
+    print(f"  Discount: {item['discount_rate'] * 100:.0f}%")
+    print(f"  Final Price: ${item['final_price']:.2f}\n")
 
 # Print summary
 print("=== SUMMARY ===")
