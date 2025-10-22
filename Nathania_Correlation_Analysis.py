@@ -8,6 +8,8 @@
 import pandas as pd
 import numpy as np
 from scipy import stats
+import matplotlib.plylot as plt
+import seaborn as sns
 
 # 1. Input
 # Read the CSV file
@@ -33,3 +35,6 @@ print(correlation_matrix.round(3))
 # print(f'P value: {pvalue}')
 # print(f'Correlation: {correlation:.2f}')
 # print(f'P value: {pvalue:.4e}')
+sns.heatmap(correlation_matrix)
+plt.tight_layout()
+plt.show()
